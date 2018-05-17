@@ -12,23 +12,31 @@
     <title>Apateez</title>
   </head>
   <body>
-    <div id="app"></div>
-    <div id="main-container">
-      <div id="apateezSidebar"></div>
-      <div id="sub-container">
-        <div id="description"></div>
-        <div id="reviews"></div>
-      </div>
-    </div>
-    <div id="nearby-app"></div>
 
+    <script src="/lib/react.development.js"></script>
+    <script src="/lib/react-dom.development.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-    <script src="http://localhost:3001/restaurants/bundle.js"></script>
-    <script src="http://localhost:2002/restaurants/bundle.js"></script>
-    <script src="http://localhost:3003/restaurants/app.js"></script>
-    <script src="http://localhost:3004/restaurants/bundle.js"></script>
+    <script src="http://localhost:1337/app"></script>
+    <!-- <script src="http://localhost:2002/restaurants/bundle.js"></script> -->
+    <!-- <script src="http://localhost:3003/restaurants/app.js"></script> -->
+    <!-- <script src="http://localhost:3004/restaurants/bundle.js"></script> -->
+
+    <script>
+      ReactDOM.render(
+        React.createElement(Sidebar, {restaurantID: window.location.href.split('/restaurants/')[1], isModal: true}),
+        document.getElementById('Sidebar')
+      );
+      // ReactDOM.render(
+      //   React.createElement(CountDown),
+      //   document.getElementById('CountDown')
+      // );
+      // ReactDOM.render(
+      //   React.createElement(Reviews),
+      //   document.getElementById('Reviews')
+      // );
+    </script>
     
   </body>
 </html>
